@@ -7,11 +7,11 @@
 
 /* ── CONFIG ─────────────────────────────────────────────────── */
 // Change this to your deployed backend URL when live
-const API_BASE = window.BACKEND_URL || 'http://localhost:5000/api';
-const SOCKET_URL = window.BACKEND_URL
+const API_BASE =
+  window.BACKEND_URL ||
+  'https://birthday-website-api.onrender.com/api';const SOCKET_URL = window.BACKEND_URL
   ? window.BACKEND_URL.replace('/api', '')
-  : 'http://localhost:5000';
-
+: 'https://birthday-website-api.onrender.com';
 /* ── Token Storage ──────────────────────────────────────────── */
 const TokenStore = {
   get:    ()      => localStorage.getItem('tum_token'),
