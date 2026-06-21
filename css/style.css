@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #050816;
+    color: white;
+    overflow: hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            #030712,
+            #081327,
+            #101b36,
+            #050816);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .25);
+}
+
+.moon {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+
+    top: 70px;
+    right: 90px;
+
+    background: #fffce5;
+
+    box-shadow:
+        0 0 25px #fff,
+        0 0 60px #fff,
+        0 0 120px rgba(255, 255, 255, .35);
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background {
+    z-index: 0;
+}
+
+.moon {
+    z-index: 2;
+}
+
+.overlay {
+    z-index: 3;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    width: 420px;
+    max-width: 90%;
+
+    text-align: center;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(18px);
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .35);
+}
+
+.title {
+
+    font-size: 56px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.subtitle {
+
+    color: #d7d7d7;
+
+    margin-bottom: 35px;
+
+    line-height: 1.7;
+}
+
+input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    margin-bottom: 22px;
+
+    background: rgba(255, 255, 255, .12);
+
+    color: white;
+}
+
+input::placeholder {
+
+    color: #cfcfcf;
+
+}
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    background: white;
+
+    transition: .3s;
+}
+
+button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.welcome {
+    color: #ffd166;
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 25px rgba(255, 255, 255, .25);
+}
+
+.subtitle {
+    color: #d8d8d8;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+#error {
+    color: #ff6b6b;
+    font-size: 14px;
+    min-height: 20px;
+    margin-bottom: 15px;
+}
+
+.quote {
+    color: rgba(255, 255, 255, 0.75);
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+.login-page {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.login-card {
+
+    width: 430px;
+    max-width: 90%;
+
+    padding: 50px 40px;
+
+    border-radius: 28px;
+
+    background: rgba(12, 18, 35, .45);
+    backdrop-filter: blur(25px);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .45);
+
+    text-align: center;
+}
+
+.footer-text {
+
+    margin-top: 25px;
+
+    color: #cfcfcf;
+
+    font-size: 14px;
+}
+button:disabled{
+
+    cursor:not-allowed;
+
+    opacity:.8;
+
+}
+/* ==========================
+   LOGIN EXIT ANIMATION
+========================== */
+
+.login-card{
+    transition:all .8s ease;
+}
+
+.fade-out{
+
+    opacity:0;
+
+    transform:translateY(-40px) scale(.95);
+
+    filter:blur(10px);
+
+}
+.shake{
+    animation: shake .4s;
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-8px);}
+    50%{transform:translateX(8px);}
+    75%{transform:translateX(-8px);}
+    100%{transform:translateX(0);}
+
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Letter — The Unknown Man</title>
+  <meta name="description" content="A handwritten love letter, crafted with every heartbeat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/letter.css" />
+  <!-- Auth guard — must be first script; redirects to login if no JWT -->
+  <script src="js/auth.js"></script>
+</head>
+<body>
+
+  <!-- Ambient hearts -->
+  <div id="heartsLayer" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <span class="nav-logo">✦ The Unknown Man</span>
+    <ul class="nav-links" role="list">
+      <li><a href="birthday.html">🎂 Birthday</a></li>
+      <li><a href="memories.html">📸 Memories</a></li>
+      <li><a href="letter.html" class="active">💌 Letter</a></li>
+      <li><a href="chat.html">💬 Our Space</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main letter scene -->
+  <main class="letter-scene" role="main">
+
+    <h1 class="letter-scene-title">A Letter From My Heart</h1>
+    <p class="letter-scene-sub">tap the envelope to open ✨</p>
+
+    <!-- Envelope -->
+    <div class="envelope-wrapper" aria-label="Click to open envelope">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-pressed="false" aria-label="Open envelope">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-seal">💌</div>
+          <span class="envelope-text">For You, With Love</span>
+        </div>
+        <span class="envelope-hint">✦ tap to open ✦</span>
+      </div>
+    </div>
+
+    <!-- Letter Paper (hidden until envelope opens) -->
+    <div class="letter-paper-wrapper" id="letterWrapper">
+      <article class="letter-paper" aria-label="Love letter">
+        <span class="paper-rose" aria-hidden="true">🌹</span>
+        <p class="letter-date" id="letterDate"></p>
+        <p class="letter-greeting">My Dearest,</p>
+        <p class="letter-body" id="letterBody"><span class="letter-cursor" id="cursor"></span></p>
+        <p class="letter-sign" id="letterSign">
+          Forever yours,<br />
+          <span style="font-size:1.5em;">The Unknown Man ✦</span>
+        </p>
+      </article>
+    </div>
+
+    <!-- Next page button (appears after letter finishes) -->
+    <div class="next-btn-wrap">
+      <a href="chat.html" class="btn-next" id="nextBtn" aria-label="Go to chat page">
+        💬 Visit Our Little Space
+      </a>
+    </div>
+
+  </main>
+
+  <script src="js/letter.js"></script>
+</body>
+</html>

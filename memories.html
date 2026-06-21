@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memories — The Unknown Man</title>
+  <meta name="description" content="Beautiful polaroid memories of precious moments together." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/memories.css" />
+  <!-- Auth guard — must be first script; redirects to login if no JWT -->
+  <script src="js/auth.js"></script>
+</head>
+<body>
+
+  <!-- Floating sparkles -->
+  <div class="bg-layer" id="bgLayer" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <span class="nav-logo">✦ The Unknown Man</span>
+    <ul class="nav-links" role="list">
+      <li><a href="birthday.html">🎂 Birthday</a></li>
+      <li><a href="memories.html" class="active">📸 Memories</a></li>
+      <li><a href="letter.html">💌 Letter</a></li>
+      <li><a href="chat.html">💬 Our Space</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="memories-hero">
+    <h1 class="memories-title">Your Memories</h1>
+    <p class="memories-sub">Every picture tells your story ✨</p>
+  </header>
+
+  <!-- Gallery -->
+  <main class="gallery-section" aria-label="Photo gallery">
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
+
+  <!-- Next page -->
+  <div class="next-btn-wrap">
+    <a href="letter.html" class="btn-next" aria-label="Go to letter page">
+      💌 Read My Letter
+    </a>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close photo viewer">✕</button>
+      <div class="modal-img" id="modalImg" aria-hidden="true"></div>
+      <p class="modal-caption" id="modalCaption"></p>
+      <div class="modal-nav">
+        <button class="modal-arrow" id="modalPrev" aria-label="Previous photo">‹</button>
+        <span class="modal-counter" id="modalCounter"></span>
+        <button class="modal-arrow" id="modalNext" aria-label="Next photo">›</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/memories.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* ============================================
+   LOGIN PAGE — Dark Mysterious Night Sky
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+body {
+  background: radial-gradient(ellipse at 50% 0%, #1a0533 0%, #0a0118 40%, #04000d 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+
+/* ── STAR CANVAS ─────────────────────────────── */
+#starCanvas {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── MOON ─────────────────────────────────────── */
+.moon {
+  position: fixed;
+  top: 6vh; right: 10vw;
+  width: clamp(70px, 10vw, 130px);
+  height: clamp(70px, 10vw, 130px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f9f0ff 0%, #d8b4fe 40%, #c084fc 70%, #9333ea 100%);
+  box-shadow:
+    0 0 40px 15px rgba(216, 180, 254, 0.35),
+    0 0 80px 30px rgba(168, 85, 247, 0.2),
+    0 0 120px 50px rgba(139, 92, 246, 0.1);
+  animation: moonPulse 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.moon::after {
+  content: '';
+  position: absolute;
+  top: 12%; left: 18%;
+  width: 22%; height: 22%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  filter: blur(4px);
+}
+
+@keyframes moonPulse {
+  0%, 100% { box-shadow: 0 0 40px 15px rgba(216, 180, 254, 0.35), 0 0 80px 30px rgba(168, 85, 247, 0.2), 0 0 120px 50px rgba(139, 92, 246, 0.1); }
+  50%       { box-shadow: 0 0 55px 22px rgba(216, 180, 254, 0.5),  0 0 110px 45px rgba(168, 85, 247, 0.3), 0 0 160px 70px rgba(139, 92, 246, 0.15); }
+}
+
+/* ── FLOATING ORBS ───────────────────────────── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 { width: 400px; height: 400px; background: #7c3aed; top: -150px; left: -100px; animation: orbDrift 14s ease-in-out infinite; }
+.orb-2 { width: 300px; height: 300px; background: #a855f7; bottom: -100px; right: -80px; animation: orbDrift 18s ease-in-out infinite reverse; }
+.orb-3 { width: 200px; height: 200px; background: #ec4899; bottom: 30%; left: 5%; animation: orbDrift 10s ease-in-out infinite 2s; }
+
+@keyframes orbDrift {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33%       { transform: translateY(-30px) translateX(20px); }
+  66%       { transform: translateY(20px) translateX(-15px); }
+}
+
+/* ── LOGIN CARD ──────────────────────────────── */
+.login-container {
+  position: relative; z-index: 10;
+  width: min(420px, 92vw);
+  animation: cardRise 1.2s var(--ease-silk) both;
+}
+
+@keyframes cardRise {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3rem);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255,255,255,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* ── TITLE AREA ──────────────────────────────── */
+.login-icon {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: var(--gap-md);
+  animation: iconFloat 4s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.login-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 30px rgba(216, 180, 254, 0.6);
+  margin-bottom: var(--gap-xs);
+}
+
+.login-sub {
+  font-size: 0.78rem;
+  text-align: center;
+  color: rgba(196, 181, 253, 0.7);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--gap-xl);
+}
+
+/* ── FORM ────────────────────────────────────── */
+.form-group {
+  position: relative;
+  margin-bottom: var(--gap-lg);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--accent-lavender);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--gap-sm);
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 3rem 0.9rem 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: #fff;
+  outline: none;
+  transition: border-color var(--t-mid) var(--ease-smooth),
+              box-shadow var(--t-mid) var(--ease-smooth),
+              background var(--t-mid);
+  letter-spacing: 0.1em;
+}
+
+.form-input::placeholder { color: rgba(255,255,255,0.3); }
+
+.form-input:focus {
+  border-color: var(--accent-purple);
+  background: rgba(168, 85, 247, 0.08);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2),
+              0 0 20px rgba(168, 85, 247, 0.15);
+}
+
+.toggle-pw {
+  position: absolute; right: 1rem; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  color: rgba(196, 181, 253, 0.6);
+  cursor: pointer; font-size: 1rem;
+  transition: color var(--t-fast);
+  padding: 0;
+  display: flex; align-items: center;
+}
+.toggle-pw:hover { color: var(--accent-lavender); }
+
+/* ── LOGIN BUTTON ────────────────────────────── */
+.btn-login {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-fast) var(--ease-bounce),
+              box-shadow var(--t-mid) var(--ease-smooth);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-login::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-smooth);
+}
+
+.btn-login:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5); }
+.btn-login:hover::before { transform: translateX(100%); }
+.btn-login:active { transform: translateY(0); }
+
+/* ── ERROR ───────────────────────────────────── */
+.error-msg {
+  font-size: 0.78rem;
+  color: #f87171;
+  text-align: center;
+  margin-top: var(--gap-sm);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity var(--t-fast), transform var(--t-fast);
+  min-height: 1.2em;
+}
+.error-msg.show { opacity: 1; transform: translateY(0); }
+
+.error-hint {
+  font-size: 0.7rem;
+  color: rgba(196,181,253,0.5);
+  text-align: center;
+  margin-top: var(--gap-xs);
+  min-height: 1em;
+  opacity: 0;
+  transition: opacity var(--t-slow);
+}
+.error-hint.show { opacity: 1; }
+
+/* ── SHOOTING STARS ──────────────────────────── */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120px; height: 1px;
+  background: linear-gradient(to right, white, transparent);
+  transform: translateY(-50%) scaleX(-1);
+  transform-origin: left center;
+}
+
+/* ── CINEMATIC TRANSITION ─────────────────────── */
+.page-transition {
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(ellipse at center, #fff5f9 0%, #fce7f3 50%, #fbcfe8 100%);
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--t-cinematic) var(--ease-smooth);
+}
+.page-transition.fade-in { opacity: 1; pointer-events: all; }
+
+/* ── SHAKE ANIMATION ─────────────────────────── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+.shake { animation: shake 0.5s var(--ease-smooth); }

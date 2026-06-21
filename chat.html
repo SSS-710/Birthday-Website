@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Little Space ❤️ — The Unknown Man</title>
+  <meta name="description" content="A private romantic chat space, just for the two of us." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+  <!-- Auth guard — redirects to login if no JWT -->
+  <script src="js/auth.js"></script>
+  <!-- Socket.IO client -->
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- Chat Header -->
+  <header class="chat-header" role="banner">
+    <div class="chat-header-left">
+      <div class="chat-avatar" id="chatAvatar" aria-label="Chat avatar">💝</div>
+      <div class="chat-header-info">
+        <div class="chat-title">Our Little Space ❤️</div>
+        <div class="chat-status" id="chatStatus">● Connecting…</div>
+      </div>
+    </div>
+    <div class="chat-header-right">
+      <a href="birthday.html" class="back-link" aria-label="Back to birthday page">← Birthday</a>
+      <button class="chat-header-btn" id="clearChatBtn" title="Clear chat" aria-label="Clear chat">🗑</button>
+    </div>
+  </header>
+
+  <!-- Messages -->
+  <main class="chat-messages" id="chatMessages" aria-label="Chat messages" aria-live="polite">
+    <!-- Messages injected by JS -->
+  </main>
+
+  <!-- Input area -->
+  <footer class="chat-input-area" role="contentinfo">
+    <div class="chat-input-row">
+      <div class="chat-input-wrap" style="position:relative;">
+        <!-- Emoji picker -->
+        <div class="emoji-picker" id="emojiPicker" aria-label="Emoji picker" role="listbox">
+          <!-- Emojis injected by JS -->
+        </div>
+        <button class="chat-emoji-toggle" id="emojiToggle" aria-label="Open emoji picker" aria-expanded="false">😊</button>
+        <textarea
+          class="chat-input"
+          id="chatInput"
+          placeholder="say something sweet… 🌸"
+          rows="1"
+          maxlength="2000"
+          aria-label="Message input"
+          autocomplete="off"
+          spellcheck="true"
+        ></textarea>
+      </div>
+      <button class="chat-send" id="chatSend" aria-label="Send message">
+        ➤
+      </button>
+    </div>
+    <p class="firebase-status" id="firebaseStatus">⏳ Connecting…</p>
+  </footer>
+
+  <script src="js/chat.js" defer></script>
+</body>
+</html>

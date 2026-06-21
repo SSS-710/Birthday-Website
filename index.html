@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Unknown Man — Enter</title>
+  <meta name="description" content="A mysterious gateway to something beautiful." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <!-- Starfield Canvas -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Ambient orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Glowing moon -->
+  <div class="moon" aria-hidden="true"></div>
+
+  <!-- Cinematic page transition overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Login card -->
+  <main class="login-container" role="main">
+    <div class="login-card">
+
+      <div class="login-icon" aria-hidden="true">🌙</div>
+
+      <h1 class="login-title">The Unknown Man</h1>
+      <p class="login-sub">A secret place, just for you</p>
+
+      <form id="loginForm" novalidate autocomplete="off">
+
+        <!-- Username -->
+        <div class="form-group">
+          <label class="form-label" for="usernameInput">Your name</label>
+          <div class="input-wrap">
+            <input
+              class="form-input"
+              type="text"
+              id="usernameInput"
+              name="username"
+              placeholder="enter your name…"
+              autocomplete="username"
+              spellcheck="false"
+              autocapitalize="off"
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="passwordInput">Enter the secret word</label>
+          <div class="input-wrap">
+            <input
+              class="form-input"
+              type="password"
+              id="passwordInput"
+              name="password"
+              placeholder="whisper the magic word…"
+              autocomplete="current-password"
+              spellcheck="false"
+            />
+            <button
+              type="button"
+              class="toggle-pw"
+              id="togglePw"
+              aria-label="Toggle password visibility"
+            >👁</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-login" id="loginBtn">
+          ✨ Enter the Mystery
+        </button>
+
+        <p class="error-msg" id="errorMsg" role="alert" aria-live="polite"></p>
+        <p class="error-hint" id="errorHint"></p>
+      </form>
+
+    </div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
