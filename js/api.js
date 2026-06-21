@@ -9,9 +9,11 @@
 // Change this to your deployed backend URL when live
 const API_BASE =
   window.BACKEND_URL ||
-  'https://birthday-website-api.onrender.com/api';const SOCKET_URL = window.BACKEND_URL
+  'https://birthday-website-api.onrender.com/api';
+
+const SOCKET_URL = window.BACKEND_URL
   ? window.BACKEND_URL.replace('/api', '')
-: 'https://birthday-website-api.onrender.com';
+  : 'https://birthday-website-api.onrender.com';
 /* ── Token Storage ──────────────────────────────────────────── */
 const TokenStore = {
   get:    ()      => localStorage.getItem('tum_token'),
