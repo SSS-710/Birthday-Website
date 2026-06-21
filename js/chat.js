@@ -7,8 +7,8 @@
 'use strict';
 
 /* ── CONFIG ─────────────────────────────────────────────────── */
-const API_BASE   = 'http://localhost:5000/api';
-const SOCKET_URL = 'http://localhost:5000';
+const API_BASE   = 'http://https://birthday-website-api.onrender.com/api';
+const SOCKET_URL = 'http://https://birthday-website-api.onrender.com';
 
 /* ── CURRENT USER (from auth.js → localStorage) ─────────────── */
 const ME    = window.TUM_AUTH.getUser();
