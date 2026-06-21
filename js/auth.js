@@ -57,7 +57,7 @@
       try {
         const t = localStorage.getItem(TOKEN_KEY);
         if (t) {
-          await fetch('http://https://birthday-website-api.onrender.com/api/auth/logout', {
+          await fetch('https://birthday-website-api.onrender.com/api/auth/logout', {
             method:  'POST',
             headers: { Authorization: `Bearer ${t}` },
           });

@@ -6,7 +6,7 @@
 'use strict';
 
 /* ── BACKEND URL ─────────────────────────────── */
-const API_BASE = 'http://https://birthday-website-api.onrender.com';
+const API_BASE = 'https://birthday-website-api.onrender.com';
 
 /* ── STARFIELD ──────────────────────────────── */
 const canvas = document.getElementById('starCanvas');
