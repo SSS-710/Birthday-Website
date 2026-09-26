@@ -7,7 +7,7 @@
 /* ── LETTER TEXT ────────────────────────────── */
 const LETTER_TEXT = `To the Girl with the Most Beautiful Smile,
 
-Happy Birthday, Bhumika. 🤍
+Happy Birthday, 🤍
 
 I don't know if you'll ever know who made this little surprise for you, and maybe that's okay. Today isn't about revealing an identity—it's simply about wishing someone truly special the happiest birthday.
 

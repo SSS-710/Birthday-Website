@@ -7,32 +7,32 @@
 /* ── PHOTO DATA ─────────────────────────────── */
 const PHOTOS = [
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM.jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM.jpeg',
     caption: 'A beautiful memory ✨',
     date:    'June 2026',
   },
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM (1).jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM (1).jpeg',
     caption: 'Unforgettable moments 🌸',
     date:    'June 2026',
   },
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM (2).jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.58 PM (2).jpeg',
     caption: 'Always smiling 💕',
     date:    'June 2026',
   },
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.59 PM.jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.59 PM.jpeg',
     caption: 'The brightest soul 🌙',
     date:    'June 2026',
   },
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.59 PM (1).jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.57.59 PM (1).jpeg',
     caption: 'Simply radiant 🌹',
     date:    'June 2026',
   },
   {
-    src:     'assets/images/WhatsApp Image 2026-06-21 at 4.59.38 PM.jpeg',
+    // src:     'assets/images/WhatsApp Image 2026-06-21 at 4.59.38 PM.jpeg',
     caption: 'A smile that stops time 💖',
     date:    'June 2026',
   },
